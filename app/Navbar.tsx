@@ -7,7 +7,6 @@ import { IoBugSharp } from "react-icons/io5";
 
 export const Navbar = () => {
   const currPath = usePathname();
-  console.log("current pathname: ",currPath);
   const links = [
     {
       key:"1",
