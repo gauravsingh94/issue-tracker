@@ -1,5 +1,7 @@
-import React from "react";
-import { TextField, TextArea, Button } from "@radix-ui/themes";
+"use client"
+import { TextField, Button } from "@radix-ui/themes";
+import SimpleMDE from "react-simplemde-editor";
+import "easymde/dist/easymde.min.css";
 import { FaSearch } from "react-icons/fa";
 
 const NewIssue = () => {
@@ -10,7 +12,7 @@ const NewIssue = () => {
           <FaSearch height="16" width="16" />
         </TextField.Slot>
       </TextField.Root>
-      <TextArea placeholder="Reply to comment…" />
+      <SimpleMDE placeholder="Description..." />
       <Button>Submit</Button>
     </div>
   );
