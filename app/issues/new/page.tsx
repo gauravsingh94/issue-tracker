@@ -1,5 +1,5 @@
 "use client";
-import { TextField, Button, Callout } from "@radix-ui/themes";
+import { TextField, Button, Callout, Text } from "@radix-ui/themes";
 import SimpleMDE from "react-simplemde-editor";
 import "easymde/dist/easymde.min.css";
 import axios from "axios";
@@ -7,23 +7,29 @@ import { useForm, Controller } from "react-hook-form";
 import { FaSearch } from "react-icons/fa";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { issueSchema } from "@/app/validationSchema";
+import ErrorMessage from "@/app/components/ErrorMessage";
+import { z } from "zod";
 
-interface issueType {
-  title: string;
-  description: string;
-}
+type issueType = z.infer<typeof issueSchema>;
 
 const NewIssue = () => {
   const router = useRouter();
-  const { register, control, handleSubmit } = useForm<issueType>();
+  const {
+    register,
+    control,
+    handleSubmit,
+    formState: { errors },
+  } = useForm<issueType>({
+    resolver: zodResolver(issueSchema),
+  });
   const [error, setError] = useState("");
   return (
     <div className="max-w-xl">
       {error && (
         <Callout.Root color="red" className="mb-5">
-          <Callout.Text>
-            {error}
-          </Callout.Text>
+          <Callout.Text>{error}</Callout.Text>
         </Callout.Root>
       )}
       <form
@@ -42,6 +48,7 @@ const NewIssue = () => {
             <FaSearch height="16" width="16" />
           </TextField.Slot>
         </TextField.Root>
+        {errors.title && <ErrorMessage>{errors.title.message}</ErrorMessage>}
         <Controller
           name="description"
           control={control}
@@ -49,6 +56,7 @@ const NewIssue = () => {
             <SimpleMDE placeholder="Description..." {...field} />
           )}
         />
+        {errors.description && <ErrorMessage>{errors.description.message}</ErrorMessage>}
         <Button>Submit</Button>
       </form>
     </div>
