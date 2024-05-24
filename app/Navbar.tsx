@@ -16,7 +16,7 @@ export const Navbar = () => {
     {
       key: 2,
       label: "Issues",
-      href: "/issues",
+      href: "/issues/list",
     },
   ];
 
