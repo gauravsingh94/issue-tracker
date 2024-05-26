@@ -4,9 +4,13 @@ import Link from "next/link";
 import classnames from "classnames";
 import { usePathname } from "next/navigation";
 import { IoBugSharp } from "react-icons/io5";
+import { useSession } from "next-auth/react";
+import { Box } from "@radix-ui/themes/dist/esm/components/box.js";
 
 export const Navbar = () => {
   const currPath = usePathname();
+  const { status, data: session } = useSession();
+
   const links = [
     {
       key: 1,
@@ -35,12 +39,18 @@ export const Navbar = () => {
               "hover:text-zinc-800 transition-colors": true,
             })}
           >
-            <Link href={link.href}>
-              {link.label}
-            </Link>
+            <Link href={link.href}>{link.label}</Link>
           </li>
         ))}
       </ul>
+      <Box>
+        {status === "authenticated" && (
+          <Link href="/api/auth/signout">Log Out</Link>
+        )}
+        {status === "unauthenticated" && (
+          <Link href="/api/auth/signin">Sign In</Link>
+        )}
+      </Box>
     </nav>
   );
 };
