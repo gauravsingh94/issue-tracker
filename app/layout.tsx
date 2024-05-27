@@ -23,8 +23,8 @@ export default function RootLayout({
     <html lang="en">
       <body className={inter.variable}>
         <AuthProvider>
-          <Navbar />
           <Theme accentColor="violet">
+            <Navbar />
             <Container>
               <main className="p-5">{children}</main>
             </Container>
