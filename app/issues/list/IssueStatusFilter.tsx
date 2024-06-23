@@ -16,6 +16,7 @@ const IssueStatusFilter = () => {
   ];
   return (
     <Select.Root
+      defaultValue="all"
       onValueChange={(status) => {
         const query = status == "all" ? "" : `?status=${status}`;
         router.push("/issues/list" + query);
