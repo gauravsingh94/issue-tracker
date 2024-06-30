@@ -1,8 +1,6 @@
-Here's a comprehensive README file for your project issue tracking website:
-
 ---
 
-# Project Issue Tracking Website
+#Issue Tracking Website
 
 ## Description
 
