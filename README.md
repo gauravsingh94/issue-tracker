@@ -1,34 +1,63 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+Here's a comprehensive README file for your project issue tracking website:
 
-## Getting Started
+---
 
-First, run the development server:
+# Project Issue Tracking Website
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-```
+## Description
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+A web application designed to efficiently manage project issues. Track issues, assign and unassign users, update issue statuses, and view the latest issues, summaries, and charts for better project oversight. Simplify your project management with our user-friendly interface.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Features
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+- **Create Issues**: Add new issues to your projects.
+- **Delete Issues**: Remove issues that are no longer relevant.
+- **Update Issues**: Modify existing issues to keep information up-to-date.
+- **Assign Issues**: Assign issues to specific users for better accountability.
+- **Mark Issues**: Change the status of issues to open, closed, or in progress.
+- **View Graphs and Summaries**: Access detailed charts and summaries of project issues for better tracking and management.
 
-## Learn More
+## How to Setup Locally
 
-To learn more about Next.js, take a look at the following resources:
+1. **Clone the Repository**:
+    ```bash
+    git clone https://github.com/gauravsingh94/issue-tracker.git
+    ```
+2. **Navigate to the Project Directory**:
+    ```bash
+    cd issue-tracker
+    ```
+3. **Install Dependencies**:
+    ```bash
+    npm install
+    ```
+4. **Run the Development Server**:
+    ```bash
+    npm run dev
+    ```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+The application should now be running on `http://localhost:3000`.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+## UI of the Website
 
-## Deploy on Vercel
+- Dashboard
+  <img width="1451" alt="image" src="https://github.com/gauravsingh94/issue-tracker/assets/99260988/efe44495-4431-4de0-a034-00b0df73c9e7">
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- List Issues
+  <img width="1451" alt="image" src="https://github.com/gauravsingh94/issue-tracker/assets/99260988/55edfc5e-9181-441c-84f7-a5d18bec79a3">
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+- Specific Issues
+  <img width="1470" alt="image" src="https://github.com/gauravsingh94/issue-tracker/assets/99260988/3c4db7dd-0ebb-4604-8d9c-fa6b887a5d0a">
+
+- Create Issues
+  <img width="1470" alt="image" src="https://github.com/gauravsingh94/issue-tracker/assets/99260988/98d0014b-2dd1-4a65-880d-b44dc085f91e">
+
+
+
+
+## Tech Stack
+
+Next.js, Tailwind CSS, Radix ui, Prisma, Postgresql
+
+
+---
