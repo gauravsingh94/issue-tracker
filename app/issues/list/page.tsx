@@ -1,5 +1,5 @@
 import Pagination from "@/app/components/Pagination";
-import { Flex } from "@radix-ui/themes";
+import { Flex, Text } from "@radix-ui/themes";
 import prisma from "@/prisma/client";
 import { Status } from "@prisma/client";
 import IssueAction from "./IssueActions";
